@@ -1,0 +1,99 @@
+.terms-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.terms-modal-content {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-2xl);
+}
+
+.terms-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--gray-100);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 10;
+}
+
+.terms-modal-close:hover {
+    background: var(--gray-200);
+    color: var(--gray-900);
+}
+
+.terms-modal-body {
+    padding: 3rem 2.5rem;
+    overflow-y: auto;
+    color: var(--gray-700);
+}
+
+.terms-modal-body h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.terms-modal-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--blue-700);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.terms-modal-body p {
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* Scrollbar para modal */
+.terms-modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terms-modal-body::-webkit-scrollbar-track {
+    background: var(--gray-100);
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+}
+
+.terms-modal-body::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: var(--radius-full);
+}
+
+@media (max-width: 640px) {
+    .terms-modal-body {
+        padding: 2rem 1.5rem;
+    }
+
+    .terms-modal-body h2 {
+        font-size: 1.5rem;
+    }
+}

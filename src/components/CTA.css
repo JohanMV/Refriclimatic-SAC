@@ -1,0 +1,210 @@
+.cta {
+    position: relative;
+    background: linear-gradient(135deg, var(--blue-950), var(--blue-900));
+    overflow: hidden;
+}
+
+.cta__bg-effects {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.cta__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.cta__glow--1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(37, 99, 235, 0.25);
+    top: -100px;
+    right: -100px;
+}
+
+.cta__glow--2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(6, 182, 212, 0.15);
+    bottom: -80px;
+    left: -80px;
+}
+
+.cta__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Info */
+.cta__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+.cta__title-highlight {
+    background: linear-gradient(135deg, #60a5fa, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta__subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+    margin-bottom: var(--space-2xl);
+}
+
+.cta__contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cta__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--white);
+    transition: opacity var(--transition-fast);
+}
+
+.cta__contact-item:hover {
+    opacity: 0.85;
+}
+
+.cta__contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #60a5fa;
+    flex-shrink: 0;
+}
+
+.cta__contact-item strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+}
+
+.cta__contact-item span {
+    font-size: 0.82rem;
+    opacity: 0.65;
+}
+
+/* Form */
+.cta__form-wrapper {
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-2xl);
+}
+
+.cta__form-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-lg);
+}
+
+.cta__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.cta__form-group {
+    margin-bottom: 1rem;
+}
+
+.cta__form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 0.35rem;
+}
+
+.cta__form-group input,
+.cta__form-group select,
+.cta__form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--gray-800);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.cta__form-group input:focus,
+.cta__form-group select:focus,
+.cta__form-group textarea:focus {
+    border-color: var(--blue-400);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: var(--white);
+}
+
+.cta__form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.cta__form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.cta__submit {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .cta__layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cta__info {
+        text-align: center;
+    }
+
+    .cta__contact-items {
+        align-items: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .cta__form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cta__form-wrapper {
+        padding: 1.5rem;
+    }
+}
