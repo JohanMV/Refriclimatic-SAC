@@ -275,6 +275,24 @@
 @media (max-width: 640px) {
     .hero {
         padding-top: 4rem;
+        min-height: auto;
+    }
+
+    .hero__container {
+        padding-bottom: 5rem;
+    }
+
+    .hero__brand-name {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+        -webkit-text-stroke: 3px rgba(175, 175, 175, 0.85);
+    }
+
+    .hero__tagline {
+        font-size: clamp(1.3rem, 5vw, 1.8rem);
+    }
+
+    .hero__subtitle {
+        font-size: 0.95rem;
     }
 
     .hero__stats {
@@ -290,5 +308,28 @@
     .hero__actions {
         flex-direction: column;
         align-items: center;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero__image-card {
+        aspect-ratio: 4/3;
+    }
+
+    .hero__float-badge {
+        bottom: 1rem;
+        left: 1rem;
+        padding: 0.65rem 1rem;
+    }
+
+    .hero__float-badge strong {
+        font-size: 0.8rem;
+    }
+
+    .hero__wave svg {
+        height: 60px;
     }
 }

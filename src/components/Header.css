@@ -133,3 +133,17 @@
         display: flex;
     }
 }
+
+@media (max-width: 640px) {
+    .header {
+        height: 60px;
+    }
+
+    .header--scrolled {
+        height: 54px;
+    }
+
+    .header__mobile-nav {
+        padding: 0.75rem var(--container-padding);
+    }
+}
