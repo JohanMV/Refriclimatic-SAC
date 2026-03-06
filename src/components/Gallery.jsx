@@ -10,8 +10,8 @@ const images = [
     { src: '/gallery-4.png', title: 'Instalación de Chiller con Grúa', category: 'Proyectos' },
     { src: '/gallery-5.png', title: 'Montaje de Equipo Industrial', category: 'Proyectos' },
     { src: '/hero-banner.png', title: 'Planta de Chillers Industriales', category: 'Instalaciones' },
-    { src: '/images/camion_transporte_refriclimatic.png', title: 'Transporte de Chiller Industrial', category: 'Logística' },
-    { src: '/images/chiller_york_trabajador_mantenimiento.png', title: 'Mantenimiento Técnico Especializado', category: 'Servicios' },
+    { src: '/images/camion_transporte_refriclimatic.webp', title: 'Transporte de Chiller Industrial', category: 'Logística' },
+    { src: '/images/chiller_york_trabajador_mantenimiento.webp', title: 'Mantenimiento Técnico Especializado', category: 'Servicios' },
 ];
 
 export default function Gallery() {

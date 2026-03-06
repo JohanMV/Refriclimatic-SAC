@@ -22,7 +22,7 @@ const services = [
         badge: 'Esencial',
         title: 'Mantenimiento Preventivo',
         description: 'Programas de mantenimiento diseñados para maximizar la vida útil de tus equipos y prevenir paradas no planificadas que afecten tu producción.',
-        image: '/images/mantenimiento_trabajador.png',
+        image: '/images/mantenimiento_trabajador.webp',
         linkText: 'Más información',
         specs: [
             { label: 'Fluidos', value: 'Análisis de aceite y gas' },
@@ -36,7 +36,7 @@ const services = [
         badge: '24/7',
         title: 'Reparación Especializada',
         description: 'Diagnóstico y reparación de fallas en chillers de cualquier marca y capacidad. Servicio de emergencia disponible los 7 días de la semana.',
-        image: '/images/repacion_chiller_refriclimatic.png',
+        image: '/images/repacion_chiller_refriclimatic.webp',
         linkText: 'Más información',
         specs: [
             { label: 'Compresores', value: 'Rebobinado y overhaul' },

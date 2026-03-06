@@ -99,7 +99,7 @@ export default function Hero() {
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <img src="/images/trabajador_refriclimatic_banner.png" alt="Chillers industriales REFRICLIMATIC" className="hero__image" />
+                    <img src="/images/trabajador_refriclimatic_banner.webp" alt="Chillers industriales REFRICLIMATIC" className="hero__image" />
                     <div className="hero__image-overlay" />
 
                     {/* Floating badge on image */}

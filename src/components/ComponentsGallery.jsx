@@ -5,12 +5,12 @@ import './ComponentsGallery.css';
 
 const components = [
     {
-        src: '/images/tarjeta_electronica_york_2.png',
+        src: '/images/tarjeta_electronica_york_2.webp',
         title: 'Tarjetas Electrónicas de Chiller',
         description: 'Controladores electrónicos especializados para sistemas de enfriamiento industrial.',
     },
     {
-        src: '/images/sensores_chiller_york.png',
+        src: '/images/sensores_chiller_york.webp',
         title: 'Sensores',
         description: 'Sensores de temperatura, presión y flujo para monitoreo preciso de tus equipos.',
     },
@@ -30,7 +30,7 @@ const components = [
         description: 'Bombas centrífugas de alto rendimiento para circuitos de agua helada y condensación.',
     },
     {
-        src: '/images/compresor_chiller.png',
+        src: '/images/compresor_chiller.webp',
         title: 'Compresores',
         description: 'Compresores scroll y de tornillo para sistemas de refrigeración industrial.',
     },
