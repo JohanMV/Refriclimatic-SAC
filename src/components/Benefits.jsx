@@ -6,7 +6,7 @@ const benefits = [
     {
         icon: <Clock size={28} />,
         title: 'Respuesta Inmediata',
-        description: 'Atención de emergencias en menos de 2 horas. Servicio disponible las 24 horas, los 7 días de la semana.',
+        description: 'Atención de emergencias en menos de 2 horas. Servicio disponible los 7 días de la semana.',
         highlight: '< 2h',
     },
     {
@@ -24,7 +24,7 @@ const benefits = [
     {
         icon: <HeartHandshake size={28} />,
         title: 'Soporte Dedicado',
-        description: 'Un ingeniero asignado exclusivamente a tu proyecto para asegurar resultados óptimos.',
+        description: 'Un especialista asignado exclusivamente a tu proyecto para asegurar resultados óptimos.',
         highlight: '1:1',
     },
 ];
@@ -50,13 +50,13 @@ export default function Benefits() {
                             <span style={{ color: 'var(--blue-600)' }}>la diferencia</span>
                         </h2>
                         <p className="section-subtitle" style={{ maxWidth: 480 }}>
-                            Más de 15 años de experiencia nos respaldan. Somos el aliado
+                            Más de 14 años de experiencia nos respaldan. Somos el aliado
                             estratégico que tu operación industrial necesita.
                         </p>
 
                         <div className="benefits__big-stats">
                             <div className="benefits__big-stat">
-                                <span className="benefits__big-stat-number">98%</span>
+                                <span className="benefits__big-stat-number">100%</span>
                                 <span className="benefits__big-stat-label">Tasa de satisfacción de nuestros clientes</span>
                             </div>
                             <div className="benefits__big-stat">

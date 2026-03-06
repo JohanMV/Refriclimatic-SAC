@@ -73,6 +73,31 @@
     margin-bottom: 1rem;
 }
 
+.terms-modal-body ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.terms-modal-body ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+}
+
+.terms-modal-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-500);
+}
+
 /* Scrollbar para modal */
 .terms-modal-body::-webkit-scrollbar {
     width: 6px;

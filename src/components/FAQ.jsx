@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { scrollToSection } from '../utils/scrollTo';
 import './FAQ.css';
 
 const faqs = [
     {
         question: '¿Cuál es el tiempo de respuesta para emergencias?',
-        answer: 'Nuestro equipo de respuesta rápida puede atender emergencias en un tiempo promedio de 2 horas dentro del área metropolitana. Para zonas más alejadas, garantizamos la llegada en un máximo de 6 horas. Contamos con equipos de reemplazo listos para despacho inmediato.',
+        answer: 'Nuestro equipo de respuesta rápida puede atender emergencias en un tiempo promedio de 3 horas dentro del área metropolitana. Para zonas más alejadas, garantizamos la llegada en un máximo de 6-8 horas. Contamos con equipos de reemplazo listos para despacho inmediato.',
     },
     {
         question: '¿Qué tipos de chillers tienen disponibles para alquiler?',
-        answer: 'Contamos con una amplia flota de chillers que va desde 5 hasta 500 toneladas de refrigeración (TR). Disponemos de chillers enfriados por aire y por agua, tanto con compresores scroll, tornillo como centrífugos. Todos nuestros equipos son de marcas reconocidas como Carrier, Trane y York.',
+        answer: 'Contamos con una amplia flota de chillers que va desde 60 hasta 210 toneladas de refrigeración (TR). Disponemos de chillers enfriados por aire y por agua, tanto con compresores scroll, tornillo como centrífugos. Todos nuestros equipos son de marcas reconocidas como Carrier, Trane y York.',
     },
     {
         question: '¿Incluyen la instalación en el servicio de alquiler?',
-        answer: 'Sí, nuestro servicio de alquiler incluye transporte, instalación, puesta en marcha, capacitación al personal y desinstalación al finalizar el contrato. También incluimos el monitoreo remoto 24/7 durante todo el período de alquiler.',
+        answer: 'No, los servicios de transporte, instalación y desinstalación tienen un costo adicional al valor del alquiler del chiller.',
     },
     {
         question: '¿Qué garantía ofrecen en sus servicios de reparación?',
@@ -26,11 +27,11 @@ const faqs = [
     },
     {
         question: '¿En qué zonas del Perú ofrecen sus servicios?',
-        answer: 'Operamos a nivel nacional con presencia principal en Lima, Arequipa, Trujillo y Piura. Para proyectos especiales, podemos desplazar nuestro equipo a cualquier punto del país. También atendemos clientes en otros países de Sudamérica.',
+        answer: 'Operamos a nivel nacional con presencia principal en Lima, Ica, La Libertad, San Martín y Piura. Para proyectos especiales, podemos desplazar nuestro equipo a cualquier punto del país.',
     },
     {
         question: '¿Cómo solicito una cotización?',
-        answer: 'Puede solicitar una cotización a través de nuestro formulario de contacto en la web, llamando a nuestra línea directa +51 999 999 999, o enviando un correo a ventas@refriclimatic.com. Nuestro equipo comercial le responderá en menos de 24 horas con una propuesta personalizada.',
+        answer: 'Puede solicitar una cotización a través de nuestro formulario de contacto en la web, escribiendo al WhatsApp +51 999 999 999, o enviando un correo a informes@refriclimatic.com. Nuestro equipo comercial le responderá en menos de 24 horas con una propuesta personalizada.',
     },
 ];
 
@@ -94,7 +95,7 @@ export default function FAQ() {
 
                         <div className="faq__contact-box">
                             <p>¿No encuentras lo que buscas?</p>
-                            <a href="#contacto" className="btn btn-primary">
+                            <a href="#contacto" className="btn btn-primary" onClick={(e) => scrollToSection('contacto', e)}>
                                 Contáctanos
                             </a>
                         </div>

@@ -2,16 +2,17 @@ import { motion } from 'framer-motion';
 import './SocialProof.css';
 
 const clients = [
-    'Backus & Johnston',
-    'Gloria S.A.',
-    'Alicorp',
-    'Southern Copper',
-    'Antamina',
-    'Cerro Verde',
-    'Cementos Pacasmayo',
-    'Lindley',
-    'Nestlé Perú',
-    'San Fernando',
+    { name: 'Backus', logo: '/images/backus_logo.png' },
+    { name: 'Gloria S.A.', logo: '/images/gloria_logo.jpeg' },
+    { name: 'PRECOR', logo: '/images/precor_logo.png' },
+    { name: 'Globalplast Perú', logo: '/images/global_plast_sac_logo.jpg' },
+    { name: 'Eurotubo', logo: '/images/eurotubo_logo.jpg' },
+    { name: 'Iberoplast', logo: '/images/iberoplast_logo.png' },
+    { name: 'Solpack', logo: '/images/solpack_logo.jpg' },
+    { name: 'RomEx', logo: '/images/romex_logo.png' },
+    { name: 'Industrias San Miguel', logo: '/images/industrias_san_miguel_logo.jpg' },
+    { name: 'Surpack', logo: '/images/surpack_logo.jpg' },
+    { name: 'R&M Consulting', logo: '/images/r&m_consulting_logo.jpg' },
 ];
 
 export default function SocialProof() {
@@ -33,12 +34,12 @@ export default function SocialProof() {
             <div className="social-proof__marquee-wrapper">
                 <div className="social-proof__marquee">
                     <div className="social-proof__track">
-                        {[...clients, ...clients].map((name, i) => (
+                        {[...clients, ...clients].map((client, i) => (
                             <div key={i} className="social-proof__client">
-                                <div className="social-proof__client-icon">
-                                    {name.charAt(0)}
+                                <div className="social-proof__client-logo">
+                                    <img src={client.logo} alt={client.name} />
                                 </div>
-                                <span>{name}</span>
+                                <span>{client.name}</span>
                             </div>
                         ))}
                     </div>

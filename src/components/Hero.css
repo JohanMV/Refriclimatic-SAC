@@ -76,34 +76,37 @@
     gap: 4rem;
     align-items: center;
     padding-top: 2rem;
-    padding-bottom: 6rem;
+    padding-bottom: 7rem;
 }
 
 /* Content */
 .hero__content {
     color: var(--white);
+    padding-top: 1.5rem;
 }
 
-.hero__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 0.5rem 1.2rem;
-    border-radius: var(--radius-full);
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--space-xl);
-}
-
-.hero__title {
+.hero__brand-name {
     font-family: var(--font-display);
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    -webkit-text-stroke: 5px rgba(175, 175, 175, 0.85);
+    paint-order: stroke fill;
+    text-shadow:
+        -1px -1px 0 rgba(255, 255, 255, 0.7),
+        1px -1px 0 rgba(255, 255, 255, 0.7),
+        -1px 1px 0 rgba(255, 255, 255, 0.7),
+        1px 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.hero__tagline {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
     color: var(--white);
     margin-bottom: var(--space-lg);
 }
@@ -120,14 +123,14 @@
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.75);
     max-width: 540px;
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-lg);
 }
 
 .hero__actions {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: var(--space-3xl);
+    margin-bottom: var(--space-xl);
 }
 
 .hero__btn-primary {
@@ -185,6 +188,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.hero__image-card:hover .hero__image {
+    transform: scale(1.05);
 }
 
 .hero__image-overlay {

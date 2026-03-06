@@ -38,13 +38,13 @@ export default function CTA() {
                                     <span>+51 999 999 999</span>
                                 </div>
                             </a>
-                            <a href="mailto:ventas@refriclimatic.com" className="cta__contact-item">
+                            <a href="mailto:informes@refriclimatic.com" className="cta__contact-item">
                                 <div className="cta__contact-icon">
                                     <Mail size={20} />
                                 </div>
                                 <div>
                                     <strong>Escríbenos</strong>
-                                    <span>ventas@refriclimatic.com</span>
+                                    <span>informes@refriclimatic.com</span>
                                 </div>
                             </a>
                             <div className="cta__contact-item">
@@ -53,7 +53,7 @@ export default function CTA() {
                                 </div>
                                 <div>
                                     <strong>Visítanos</strong>
-                                    <span>Av. Industrial 1250, Lima, Perú</span>
+                                    <span>Santa Anita, Lima, Perú</span>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Shield, Clock, Wrench } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
+import { scrollToSection } from '../utils/scrollTo';
 import './Hero.css';
 
 export default function Hero() {
@@ -20,26 +21,26 @@ export default function Hero() {
 
             <div className="hero__container container">
                 <div className="hero__content">
-                    <motion.div
-                        className="hero__badge"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                    >
-                        <Shield size={14} />
-                        <span>Más de 15 años de experiencia</span>
-                    </motion.div>
-
                     <motion.h1
-                        className="hero__title"
+                        className="hero__brand-name"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3, duration: 0.7 }}
+                        transition={{ delay: 0.2, duration: 0.7 }}
+                    >
+                        <span style={{ color: '#2c2c2c' }}>REFRI</span>
+                        <span style={{ color: '#0078bf' }}>CLIMATIC</span>
+                    </motion.h1>
+
+                    <motion.p
+                        className="hero__tagline"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.35, duration: 0.7 }}
                     >
                         Soluciones en{' '}
                         <span className="hero__title-highlight">Chillers Industriales</span>{' '}
                         para tu operación
-                    </motion.h1>
+                    </motion.p>
 
                     <motion.p
                         className="hero__subtitle"
@@ -58,11 +59,11 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6, duration: 0.7 }}
                     >
-                        <a href="#contacto" className="btn btn-primary btn-lg hero__btn-primary">
+                        <a href="#contacto" className="btn btn-primary btn-lg hero__btn-primary" onClick={(e) => scrollToSection('contacto', e)}>
                             Solicitar Cotización
                             <ArrowRight size={18} />
                         </a>
-                        <a href="#servicios" className="btn btn-outline-white btn-lg">
+                        <a href="#servicios" className="btn btn-outline-white btn-lg" onClick={(e) => scrollToSection('servicios', e)}>
                             Nuestros Servicios
                         </a>
                     </motion.div>
@@ -75,7 +76,7 @@ export default function Hero() {
                         transition={{ delay: 0.8, duration: 0.7 }}
                     >
                         <div className="hero__stat">
-                            <span className="hero__stat-number">15+</span>
+                            <span className="hero__stat-number">14+</span>
                             <span className="hero__stat-label">Años de Experiencia</span>
                         </div>
                         <div className="hero__stat-divider" />
@@ -98,7 +99,7 @@ export default function Hero() {
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <img src="/hero-banner.png" alt="Chillers industriales REFRICLIMATIC" className="hero__image" />
+                    <img src="/images/trabajador_refriclimatic_banner.png" alt="Chillers industriales REFRICLIMATIC" className="hero__image" />
                     <div className="hero__image-overlay" />
 
                     {/* Floating badge on image */}
@@ -109,8 +110,7 @@ export default function Hero() {
                     >
                         <Clock size={20} />
                         <div>
-                            <strong>Respuesta en 2h</strong>
-                            <small>Servicio de emergencia</small>
+                            <strong>Emergencias en 2h</strong>
                         </div>
                     </motion.div>
                 </motion.div>

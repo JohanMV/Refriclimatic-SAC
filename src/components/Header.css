@@ -47,6 +47,7 @@
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    margin-left: auto;
 }
 
 .header__nav-link {
@@ -71,36 +72,6 @@
 .header--scrolled .header__nav-link:hover {
     color: var(--blue-700);
     background: var(--blue-50);
-}
-
-/* Actions */
-.header__actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-shrink: 0;
-}
-
-.header__phone {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    transition: color var(--transition-fast);
-}
-
-.header--scrolled .header__phone {
-    color: var(--blue-700);
-}
-
-.header__phone:hover {
-    color: var(--white);
-}
-
-.header--scrolled .header__phone:hover {
-    color: var(--blue-500);
 }
 
 .header__cta {

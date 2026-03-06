@@ -6,7 +6,7 @@
 }
 
 .social-proof__label {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--gray-400);
     white-space: nowrap;
@@ -47,19 +47,18 @@
     color: var(--blue-600);
 }
 
-.social-proof__client-icon {
-    width: 36px;
-    height: 36px;
+.social-proof__client-logo {
+    width: 55px;
+    height: 55px;
     border-radius: var(--radius-md);
-    background: var(--blue-100);
-    color: var(--blue-600);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.85rem;
+    overflow: hidden;
     flex-shrink: 0;
+}
+
+.social-proof__client-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Fades */

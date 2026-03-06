@@ -4,14 +4,14 @@ import { X, ZoomIn, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 import './Gallery.css';
 
 const images = [
-    { src: '/gallery-1.png', title: 'Chiller Industrial de Alta Capacidad', category: 'Equipos' },
+    { src: '/images/York-150-TON.png', title: 'Chiller Industrial de Alta Capacidad', category: 'Equipos' },
     { src: '/gallery-2.png', title: 'Sistemas de Enfriamiento en Azotea', category: 'Instalaciones' },
     { src: '/gallery-3.png', title: 'Componentes de Precisión', category: 'Tecnología' },
     { src: '/gallery-4.png', title: 'Instalación de Chiller con Grúa', category: 'Proyectos' },
     { src: '/gallery-5.png', title: 'Montaje de Equipo Industrial', category: 'Proyectos' },
     { src: '/hero-banner.png', title: 'Planta de Chillers Industriales', category: 'Instalaciones' },
-    { src: '/service-alquiler.png', title: 'Transporte de Chiller Industrial', category: 'Logística' },
-    { src: '/service-mantenimiento.png', title: 'Mantenimiento Técnico Especializado', category: 'Servicios' },
+    { src: '/images/camion_transporte_refriclimatic.png', title: 'Transporte de Chiller Industrial', category: 'Logística' },
+    { src: '/images/chiller_york_trabajador_mantenimiento.png', title: 'Mantenimiento Técnico Especializado', category: 'Servicios' },
 ];
 
 export default function Gallery() {

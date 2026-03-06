@@ -1,17 +1,24 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import './Header.css';
 
 const navLinks = [
-  { label: 'Inicio', href: '#hero' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Galería', href: '#galeria' },
-  { label: 'Beneficios', href: '#beneficios' },
-  { label: 'Testimonios', href: '#testimonios' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Inicio', sectionId: 'hero' },
+  { label: 'Servicios', sectionId: 'servicios' },
+  { label: 'Galería', sectionId: 'galeria' },
+  { label: 'Beneficios', sectionId: 'beneficios' },
+  { label: 'Testimonios', sectionId: 'testimonios' },
+  { label: 'FAQ', sectionId: 'faq' },
+  { label: 'Contacto', sectionId: 'contacto' },
 ];
+
+function scrollToSection(sectionId) {
+  const el = document.getElementById(sectionId);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,14 +48,23 @@ export default function Header() {
     >
       <div className="header__container container">
         {/* Logo */}
-        <a href="#hero" className="header__logo">
-          <img src="/Refriclimatic_logo_icon.png" alt="REFRICLIMATIC S.A.C." className="header__logo-img" />
+        <a
+          href="#"
+          className="header__logo"
+          onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
+        >
+          <img src="/Refriclimatic_logo_icon.png?v=2" alt="REFRICLIMATIC S.A.C." className="header__logo-img" />
         </a>
 
         {/* Desktop Nav */}
         <nav className="header__nav">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="header__nav-link">
+            <a
+              key={link.sectionId}
+              href={`#${link.sectionId}`}
+              className="header__nav-link"
+              onClick={(e) => { e.preventDefault(); scrollToSection(link.sectionId); }}
+            >
               {link.label}
             </a>
           ))}
@@ -56,11 +72,11 @@ export default function Header() {
 
         {/* CTA */}
         <div className="header__actions">
-          <a href="tel:+51999999999" className="header__phone">
-            <Phone size={16} />
-            <span>+51 999 999 999</span>
-          </a>
-          <a href="#contacto" className="btn btn-primary header__cta">
+          <a
+            href="#contacto"
+            className="btn btn-primary header__cta"
+            onClick={(e) => { e.preventDefault(); scrollToSection('contacto'); }}
+          >
             Cotizar Ahora
           </a>
         </div>
@@ -88,18 +104,31 @@ export default function Header() {
             <nav className="header__mobile-nav">
               {navLinks.map((link, i) => (
                 <motion.a
-                  key={link.href}
-                  href={link.href}
+                  key={link.sectionId}
+                  href={`#${link.sectionId}`}
                   className="header__mobile-link"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.sectionId);
+                    setMobileOpen(false);
+                  }}
                 >
                   {link.label}
                 </motion.a>
               ))}
-              <a href="#contacto" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }} onClick={() => setMobileOpen(false)}>
+              <a
+                href="#contacto"
+                className="btn btn-primary"
+                style={{ width: '100%', marginTop: '1rem' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('contacto');
+                  setMobileOpen(false);
+                }}
+              >
                 Cotizar Ahora
               </a>
             </nav>

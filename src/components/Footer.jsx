@@ -1,25 +1,23 @@
-import { useState } from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube, ArrowUp } from 'lucide-react';
-import TermsModal from './TermsModal';
+import { scrollToSection } from '../utils/scrollTo';
 import './Footer.css';
 
 const footerLinks = {
     servicios: [
-        { label: 'Alquiler de Chillers', href: '#servicios' },
-        { label: 'Reparación Especializada', href: '#servicios' },
-        { label: 'Mantenimiento Preventivo', href: '#servicios' },
+        { label: 'Alquiler de Chillers', sectionId: 'servicios' },
+        { label: 'Reparación Especializada', sectionId: 'servicios' },
+        { label: 'Mantenimiento Preventivo', sectionId: 'servicios' },
     ],
     empresa: [
-        { label: 'Sobre Nosotros', href: '#beneficios' },
-        { label: 'Galería', href: '#galeria' },
-        { label: 'Testimonios', href: '#testimonios' },
-        { label: 'Preguntas Frecuentes', href: '#faq' },
-        { label: 'Contacto', href: '#contacto' },
+        { label: 'Sobre Nosotros', sectionId: 'beneficios' },
+        { label: 'Galería', sectionId: 'galeria' },
+        { label: 'Testimonios', sectionId: 'testimonios' },
+        { label: 'Preguntas Frecuentes', sectionId: 'faq' },
+        { label: 'Contacto', sectionId: 'contacto' },
     ],
 };
 
 export default function Footer() {
-    const [isTermsOpen, setIsTermsOpen] = useState(false);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -32,7 +30,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="footer__brand">
                         <div className="footer__logo">
-                            <img src="/Refriclimatic_logo.png" alt="REFRICLIMATIC S.A.C. Logo" className="footer__logo-img" style={{ maxHeight: '60px' }} />
+                            <img src="/images/Refriclimatic_logo_icon.png" alt="REFRICLIMATIC S.A.C. Logo" className="footer__logo-img" style={{ maxHeight: '60px' }} />
                         </div>
                         <p className="footer__brand-desc">
                             Líderes en soluciones de enfriamiento industrial. Más de 15 años
@@ -53,7 +51,7 @@ export default function Footer() {
                         <ul>
                             {footerLinks.servicios.map((link, i) => (
                                 <li key={i}>
-                                    <a href={link.href}>{link.label}</a>
+                                    <a href={`#${link.sectionId}`} onClick={(e) => scrollToSection(link.sectionId, e)}>{link.label}</a>
                                 </li>
                             ))}
                         </ul>
@@ -65,16 +63,18 @@ export default function Footer() {
                         <ul>
                             {footerLinks.empresa.map((link, i) => (
                                 <li key={i}>
-                                    <a href={link.href}>{link.label}</a>
+                                    <a href={`#${link.sectionId}`} onClick={(e) => scrollToSection(link.sectionId, e)}>{link.label}</a>
                                 </li>
                             ))}
                             <li>
-                                <button
+                                <a
+                                    href="/#/términos-condiciones"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="footer__terms-link"
-                                    onClick={() => setIsTermsOpen(true)}
                                 >
                                     Términos y Condiciones
-                                </button>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -93,7 +93,7 @@ export default function Footer() {
                             </a>
                             <div className="footer__contact-link">
                                 <MapPin size={16} />
-                                <span>Av. Industrial 1250, Lima, Perú</span>
+                                <span>Santa Anita, Lima, Perú</span>
                             </div>
                         </div>
                     </div>
@@ -108,8 +108,6 @@ export default function Footer() {
                     </button>
                 </div>
             </div>
-
-            <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
         </footer>
     );
 }

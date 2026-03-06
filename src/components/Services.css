@@ -21,17 +21,18 @@
     transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20), 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .services__card:hover {
-    border-color: var(--blue-200);
-    box-shadow: var(--shadow-xl);
-    transform: translateY(-4px);
+    border-color: var(--blue-300);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15), 0 4px 12px rgba(0, 0, 0, 0.06);
+    transform: translateY(-6px);
 }
 
 .services__card-image {
     position: relative;
-    height: 220px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -92,6 +93,11 @@
     color: var(--blue-600);
     transition: gap var(--transition-fast);
     margin-top: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .services__card-link:hover {
@@ -99,7 +105,178 @@
     color: var(--blue-700);
 }
 
-/* Responsive */
+/* ==========================================
+   Service Detail Lightbox
+   ========================================== */
+.services__lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.services__lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 10;
+    border: none;
+    cursor: pointer;
+}
+
+.services__lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.services__lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 10;
+    border: none;
+    cursor: pointer;
+}
+
+.services__lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.services__lightbox-nav--prev {
+    left: 1.5rem;
+}
+
+.services__lightbox-nav--next {
+    right: 1.5rem;
+}
+
+/* ── Layout: specs card + image card side by side ── */
+.services__lightbox-layout {
+    display: flex;
+    align-items: stretch;
+    gap: 1.25rem;
+    max-width: 920px;
+    max-height: 85vh;
+    width: 100%;
+}
+
+/* ── Specs card (left) ── */
+.services__lightbox-specs-card {
+    flex: 0 0 240px;
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.services__lightbox-specs-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--blue-700);
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+}
+
+.services__lightbox-specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.services__lightbox-spec {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.services__lightbox-spec:not(:last-child) {
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.services__lightbox-spec-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-400);
+}
+
+.services__lightbox-spec-value {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    line-height: 1.4;
+}
+
+/* ── Image card (right) — same as ComponentsGallery lightbox ── */
+.services__lightbox-image-card {
+    flex: 1;
+    max-height: 85vh;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.services__lightbox-image-card img {
+    width: 100%;
+    height: auto;
+    max-height: 65vh;
+    object-fit: contain;
+    background: #f8fafc;
+}
+
+.services__lightbox-image-info {
+    padding: 1.25rem 1.5rem 1.5rem;
+    background: #ffffff;
+}
+
+.services__lightbox-image-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.3rem;
+}
+
+.services__lightbox-image-info p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
 @media (max-width: 1024px) {
     .services__grid {
         grid-template-columns: repeat(2, 1fr);
@@ -109,5 +286,33 @@
 @media (max-width: 768px) {
     .services__grid {
         grid-template-columns: 1fr;
+    }
+
+    .services__lightbox-layout {
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: 90vh;
+    }
+
+    .services__lightbox-specs-card {
+        flex: 0 0 auto;
+    }
+
+    .services__lightbox-nav--prev {
+        left: 0.75rem;
+    }
+
+    .services__lightbox-nav--next {
+        right: 0.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .services__lightbox {
+        padding: 1rem;
+    }
+
+    .services__lightbox-specs-card {
+        padding: 1.25rem 1rem;
     }
 }

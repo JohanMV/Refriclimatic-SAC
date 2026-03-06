@@ -1,25 +1,15 @@
-import { motion } from 'framer-motion';
-import { Cpu, Gauge, Thermometer, Droplets, Fan, BatteryCharging } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Cpu, Gauge, Thermometer, Wind, Fan, BatteryCharging, ChevronDown } from 'lucide-react';
 import './TechSpecs.css';
 
 const specs = [
+    // ─── First row ───
     {
         icon: <Gauge size={24} />,
         label: 'Capacidad de Enfriamiento',
-        value: '5 – 500 TR',
+        value: '60 – 210 TR',
         detail: 'Toneladas de refrigeración',
-    },
-    {
-        icon: <Thermometer size={24} />,
-        label: 'Rango de Temperatura',
-        value: '-10°C a +25°C',
-        detail: 'Según requerimiento',
-    },
-    {
-        icon: <Droplets size={24} />,
-        label: 'Flujo de Agua',
-        value: 'Hasta 2,000 GPM',
-        detail: 'Galones por minuto',
     },
     {
         icon: <Fan size={24} />,
@@ -28,20 +18,38 @@ const specs = [
         detail: 'Según aplicación',
     },
     {
-        icon: <BatteryCharging size={24} />,
-        label: 'Eficiencia Energética',
-        value: '0.55 kW/TR',
-        detail: 'Consumo optimizado',
+        icon: <Cpu size={24} />,
+        label: 'Voltaje',
+        value: '220V - 380V - 460V',
+        detail: 'Trifásico',
+    },
+    // ─── Second row ───
+    {
+        icon: <Thermometer size={24} />,
+        label: 'Rango de Temperatura',
+        value: '5°C a +20°C',
+        detail: 'Según requerimiento',
     },
     {
-        icon: <Cpu size={24} />,
-        label: 'Control PLC',
-        value: 'Automatizado',
-        detail: 'Monitoreo remoto IoT',
+        icon: <Wind size={24} />,
+        label: 'Gas Refrigerante',
+        value: 'R-410A / R-134A / R-22',
+        detail: 'Refrigerante ecológico',
+    },
+    {
+        icon: <BatteryCharging size={24} />,
+        label: 'Eficiencia Energética',
+        value: '0.28 kW/TR',
+        detail: 'Consumo optimizado',
     },
 ];
 
 export default function TechSpecs() {
+    const [expanded, setExpanded] = useState(false);
+
+    const firstRow = specs.slice(0, 3);
+    const secondRow = specs.slice(3);
+
     return (
         <section id="caracteristicas" className="tech-specs section-padding">
             <div className="tech-specs__bg-pattern" />
@@ -67,8 +75,9 @@ export default function TechSpecs() {
                     </p>
                 </motion.div>
 
+                {/* First row — always visible */}
                 <div className="tech-specs__grid">
-                    {specs.map((spec, index) => (
+                    {firstRow.map((spec, index) => (
                         <motion.div
                             key={index}
                             className="tech-specs__card"
@@ -86,6 +95,54 @@ export default function TechSpecs() {
                             <span className="tech-specs__card-detail">{spec.detail}</span>
                         </motion.div>
                     ))}
+                </div>
+
+                {/* Second row — expandable */}
+                <AnimatePresence>
+                    {expanded && (
+                        <motion.div
+                            className="tech-specs__grid tech-specs__grid--second"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            {secondRow.map((spec, index) => (
+                                <motion.div
+                                    key={index + 3}
+                                    className="tech-specs__card"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.1, duration: 0.4 }}
+                                    whileHover={{ scale: 1.03, y: -4 }}
+                                >
+                                    <div className="tech-specs__card-icon">
+                                        {spec.icon}
+                                    </div>
+                                    <span className="tech-specs__card-label">{spec.label}</span>
+                                    <span className="tech-specs__card-value">{spec.value}</span>
+                                    <span className="tech-specs__card-detail">{spec.detail}</span>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                {/* Toggle button */}
+                <div className="tech-specs__toggle-wrapper">
+                    <button
+                        className="tech-specs__toggle"
+                        onClick={() => setExpanded(!expanded)}
+                    >
+                        <span>{expanded ? 'Ver menos' : 'Ver más especificaciones'}</span>
+                        <motion.span
+                            className="tech-specs__toggle-icon"
+                            animate={{ rotate: expanded ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <ChevronDown size={18} />
+                        </motion.span>
+                    </button>
                 </div>
             </div>
         </section>

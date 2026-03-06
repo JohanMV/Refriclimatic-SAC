@@ -27,6 +27,12 @@
     z-index: 1;
 }
 
+/* Second row grid — needs overflow hidden for the expand animation */
+.tech-specs__grid--second {
+    margin-top: 1.25rem;
+    overflow: hidden;
+}
+
 .tech-specs__card {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -79,6 +85,43 @@
 .tech-specs__card-detail {
     font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Toggle button ── */
+.tech-specs__toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-specs__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tech-specs__toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(96, 165, 250, 0.5);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.tech-specs__toggle-icon {
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Responsive */
