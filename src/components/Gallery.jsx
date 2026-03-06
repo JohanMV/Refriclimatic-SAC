@@ -6,7 +6,7 @@ import './Gallery.css';
 const images = [
     { src: '/images/York-150-TON.png', title: 'Chiller Industrial de Alta Capacidad', category: 'Equipos' },
     { src: '/gallery-2.png', title: 'Sistemas de Enfriamiento en Azotea', category: 'Instalaciones' },
-    { src: '/gallery-3.png', title: 'Componentes de Precisión', category: 'Tecnología' },
+    { src: '/images/compresor_danfoss_2.webp', title: 'Componentes de Precisión', category: 'Tecnología' },
     { src: '/gallery-4.png', title: 'Instalación de Chiller con Grúa', category: 'Proyectos' },
     { src: '/gallery-5.png', title: 'Montaje de Equipo Industrial', category: 'Proyectos' },
     { src: '/hero-banner.png', title: 'Planta de Chillers Industriales', category: 'Instalaciones' },
