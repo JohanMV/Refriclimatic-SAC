@@ -87,7 +87,7 @@ export default function Footer() {
                                 <Phone size={16} />
                                 <span>+51 999 999 999</span>
                             </a>
-                            <a href="mailto:ventas@refriclimatic.com" className="footer__contact-link">
+                            <a href="mailto:informes@refriclimatic.com" className="footer__contact-link">
                                 <Mail size={16} />
                                 <span>ventas@refriclimatic.com</span>
                             </a>
