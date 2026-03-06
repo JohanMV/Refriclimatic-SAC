@@ -16,7 +16,7 @@ export default function TermsPage() {
                         <ArrowLeft size={18} />
                         Volver al inicio
                     </a>
-                    <img src="/images/Refriclimatic_logo_icon.png" alt="REFRICLIMATIC S.A.C." className="terms-page__logo" />
+                    <img src="/images/Refriclimatic_logo_icon.webp" alt="REFRICLIMATIC S.A.C." className="terms-page__logo" />
                 </div>
             </header>
 

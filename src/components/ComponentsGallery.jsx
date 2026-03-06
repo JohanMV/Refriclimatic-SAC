@@ -20,7 +20,7 @@ const components = [
         description: 'Ventiladores axiales y centrífugos de alta eficiencia para torres y condensadores.',
     },
     {
-        src: '/images/torre_enfriamiento.png',
+        src: '/images/torre_enfriamiento.webp',
         title: 'Torres de Enfriamiento',
         description: 'Torres de enfriamiento industriales para disipar calor de procesos críticos.',
     },

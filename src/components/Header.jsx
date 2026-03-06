@@ -53,7 +53,7 @@ export default function Header() {
           className="header__logo"
           onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
         >
-          <img src="/Refriclimatic_logo_icon.png?v=2" alt="REFRICLIMATIC S.A.C." className="header__logo-img" />
+          <img src="/images/Refriclimatic_logo_icon.webp?v=2" alt="REFRICLIMATIC S.A.C." className="header__logo-img" />
         </a>
 
         {/* Desktop Nav */}

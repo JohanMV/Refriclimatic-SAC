@@ -8,7 +8,7 @@ const services = [
         badge: 'Popular',
         title: 'Alquiler de Chillers',
         description: 'Equipos de enfriamiento industrial disponibles para alquiler temporal o a largo plazo, con capacidades desde 60 hasta 210 toneladas de refrigeración.',
-        image: '/images/chiller_york_alquiler_3.png',
+        image: '/images/chiller_york_alquiler_3.webp',
         linkText: 'Más información',
         specs: [
             { label: 'Marcas', value: 'York, Carrier, Trane' },

@@ -30,7 +30,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="footer__brand">
                         <div className="footer__logo">
-                            <img src="/images/Refriclimatic_logo_icon.png" alt="REFRICLIMATIC S.A.C. Logo" className="footer__logo-img" style={{ maxHeight: '60px' }} />
+                            <img src="/images/Refriclimatic_logo_icon.webp" alt="REFRICLIMATIC S.A.C. Logo" className="footer__logo-img" style={{ maxHeight: '60px' }} />
                         </div>
                         <p className="footer__brand-desc">
                             Líderes en soluciones de enfriamiento industrial. Más de 15 años
