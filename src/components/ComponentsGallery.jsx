@@ -6,32 +6,32 @@ import './ComponentsGallery.css';
 const components = [
     {
         src: '/images/tarjeta_electronica_york_2.webp',
-        title: 'Tarjetas Electrónicas de Chiller',
+        title: 'Tarjetas Electrónicas York para Control de Chillers Industriales',
         description: 'Controladores electrónicos especializados para sistemas de enfriamiento industrial.',
     },
     {
         src: '/images/sensores_chiller_york.webp',
-        title: 'Sensores',
+        title: 'Sensores de Temperatura y Presión York para Chillers',
         description: 'Sensores de temperatura, presión y flujo para monitoreo preciso de tus equipos.',
     },
     {
         src: '/images/comp-ventiladores.webp',
-        title: 'Ventiladores',
+        title: 'Ventiladores Axiales de Alta Eficiencia para Torres de Enfriamiento',
         description: 'Ventiladores axiales y centrífugos de alta eficiencia para torres y condensadores.',
     },
     {
         src: '/images/torre_enfriamiento.webp',
-        title: 'Torres de Enfriamiento',
+        title: 'Torres de Enfriamiento Industriales para Procesos Críticos en Perú',
         description: 'Torres de enfriamiento industriales para disipar calor de procesos críticos.',
     },
     {
         src: '/images/comp-bomba-agua.webp',
-        title: 'Bombas de Agua',
+        title: 'Bombas de Agua Centrífugas para Circuitos de Refrigeración',
         description: 'Bombas centrífugas de alto rendimiento para circuitos de agua helada y condensación.',
     },
     {
         src: '/images/compresor_chiller.webp',
-        title: 'Compresores',
+        title: 'Venta de Compresores de Tornillo y Scroll para Chillers Industriales',
         description: 'Compresores scroll y de tornillo para sistemas de refrigeración industrial.',
     },
 ];

@@ -4,14 +4,14 @@ import { X, ZoomIn, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 import './Gallery.css';
 
 const images = [
-    { src: '/images/Chiller_york_principal.webp', title: 'Chiller Industrial de Alta Capacidad', category: 'Equipos' },
-    { src: '/images/gallery-2.webp', title: 'Sistemas de Enfriamiento en Azotea', category: 'Instalaciones' },
-    { src: '/images/compresor_danfoss_2.webp', title: 'Componentes de Precisión', category: 'Tecnología' },
-    { src: '/images/mantenimiento_chiller_30tr.webp', title: 'Mantenimiento - Chiller 30TR', category: 'Proyectos' },
-    { src: '/images/reparación_especializada.webp', title: 'Montaje de Equipo Industrial', category: 'Proyectos' },
-    { src: '/images/planta_chiller_industriales.webp', title: 'Planta de Chillers Industriales', category: 'Instalaciones' },
-    { src: '/images/camion_transporte_refriclimatic.webp', title: 'Transporte de Chiller Industrial', category: 'Logística' },
-    { src: '/images/chiller_york_trabajador_mantenimiento.webp', title: 'Mantenimiento Técnico Especializado', category: 'Servicios' },
+    { src: '/images/Chiller_york_principal.webp', title: 'Alquiler de Chiller Industrial York de Alta Capacidad en Lima', category: 'Equipos' },
+    { src: '/images/gallery-2.webp', title: 'Sistemas de Enfriamiento Industrial instalados en Azotea - Refriclimatic', category: 'Instalaciones' },
+    { src: '/images/compresor_danfoss_2.webp', title: 'Mantenimiento de Compresor Danfoss de Precisión para Chillers', category: 'Tecnología' },
+    { src: '/images/mantenimiento_chiller_30tr.webp', title: 'Servicio de Mantenimiento Preventivo Chiller de 30TR - Perú', category: 'Proyectos' },
+    { src: '/images/reparación_especializada.webp', title: 'Montaje y Soporte Técnico Especializado de Equipos Industriales', category: 'Proyectos' },
+    { src: '/images/planta_chiller_industriales.webp', title: 'Planta de Chillers Industriales para Procesos Críticos en Lima', category: 'Instalaciones' },
+    { src: '/images/camion_transporte_refriclimatic.webp', title: 'Transporte y Logística de Chiller Industrial - Refriclimatic SAC', category: 'Logística' },
+    { src: '/images/chiller_york_trabajador_mantenimiento.webp', title: 'Técnico Especialista realizando Mantenimiento de Chiller York', category: 'Servicios' },
 ];
 
 export default function Gallery() {
