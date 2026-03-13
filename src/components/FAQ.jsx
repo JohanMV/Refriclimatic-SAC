@@ -31,7 +31,7 @@ const faqs = [
     },
     {
         question: '¿Cómo solicito una cotización?',
-        answer: 'Puede solicitar una cotización a través de nuestro formulario de contacto en la web, escribiendo al WhatsApp +51 999 999 999, o enviando un correo a informes@refriclimatic.com. Nuestro equipo comercial le responderá en menos de 24 horas con una propuesta personalizada.',
+        answer: 'Puede solicitar una cotización a través de nuestro formulario de contacto en la web, escribiendo al WhatsApp +51 929 130 373, o enviando un correo a informes@refriclimatic.com. Nuestro equipo comercial le responderá en menos de 24 horas con una propuesta personalizada.',
     },
 ];
 

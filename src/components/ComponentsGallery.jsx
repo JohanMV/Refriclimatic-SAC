@@ -15,7 +15,7 @@ const components = [
         description: 'Sensores de temperatura, presión y flujo para monitoreo preciso de tus equipos.',
     },
     {
-        src: '/comp-ventiladores.png',
+        src: '/images/comp-ventiladores.webp',
         title: 'Ventiladores',
         description: 'Ventiladores axiales y centrífugos de alta eficiencia para torres y condensadores.',
     },
@@ -25,7 +25,7 @@ const components = [
         description: 'Torres de enfriamiento industriales para disipar calor de procesos críticos.',
     },
     {
-        src: '/comp-bomba-agua.png',
+        src: '/images/comp-bomba-agua.webp',
         title: 'Bombas de Agua',
         description: 'Bombas centrífugas de alto rendimiento para circuitos de agua helada y condensación.',
     },

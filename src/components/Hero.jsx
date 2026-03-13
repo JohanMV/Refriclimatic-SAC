@@ -8,7 +8,7 @@ export default function Hero() {
         <section id="hero" className="hero">
             {/* Background Image */}
             <div className="hero__bg">
-                <img src="/hero-bg-alt.png" alt="Industrial chillers facility" />
+                <img src="/images/hero-bg-alt.webp" alt="Industrial chillers facility" />
                 <div className="hero__overlay" />
             </div>
 

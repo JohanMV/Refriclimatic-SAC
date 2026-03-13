@@ -29,13 +29,13 @@ export default function CTA() {
                         </p>
 
                         <div className="cta__contact-items">
-                            <a href="tel:+51999999999" className="cta__contact-item">
+                            <a href="tel:+51929130373" className="cta__contact-item">
                                 <div className="cta__contact-icon">
                                     <Phone size={20} />
                                 </div>
                                 <div>
                                     <strong>Llámanos</strong>
-                                    <span>+51 999 999 999</span>
+                                    <span>+51 929 130 373</span>
                                 </div>
                             </a>
                             <a href="mailto:informes@refriclimatic.com" className="cta__contact-item">
@@ -67,34 +67,55 @@ export default function CTA() {
                         viewport={{ once: true, margin: '-100px' }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <form className="cta__form" onSubmit={(e) => e.preventDefault()}>
+                        <form 
+                            className="cta__form" 
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                const formData = new FormData(e.target);
+                                const data = Object.fromEntries(formData.entries());
+                                
+                                const subject = encodeURIComponent(`Nueva Solicitud de Cotización - ${data.company || data.name}`);
+                                const body = encodeURIComponent(
+                                    `Hola REFRICLIMATIC,\n\n` +
+                                    `He recibido una nueva solicitud de cotización desde la web:\n\n` +
+                                    `Nombre: ${data.name}\n` +
+                                    `Empresa: ${data.company}\n` +
+                                    `Correo: ${data.email}\n` +
+                                    `Teléfono: ${data.phone}\n` +
+                                    `Servicio: ${data.service}\n\n` +
+                                    `Mensaje:\n${data.message}\n`
+                                );
+                                
+                                window.location.href = `mailto:informes@refriclimatic.com?subject=${subject}&body=${body}`;
+                            }}
+                        >
                             <h3 className="cta__form-title">Solicitar Cotización</h3>
 
                             <div className="cta__form-row">
                                 <div className="cta__form-group">
                                     <label htmlFor="name">Nombre completo</label>
-                                    <input type="text" id="name" placeholder="Tu nombre" />
+                                    <input type="text" id="name" name="name" placeholder="Tu nombre" required />
                                 </div>
                                 <div className="cta__form-group">
                                     <label htmlFor="company">Empresa</label>
-                                    <input type="text" id="company" placeholder="Tu empresa" />
+                                    <input type="text" id="company" name="company" placeholder="Tu empresa" required />
                                 </div>
                             </div>
 
                             <div className="cta__form-row">
                                 <div className="cta__form-group">
                                     <label htmlFor="email">Correo electrónico</label>
-                                    <input type="email" id="email" placeholder="correo@empresa.com" />
+                                    <input type="email" id="email" name="email" placeholder="correo@empresa.com" required />
                                 </div>
                                 <div className="cta__form-group">
                                     <label htmlFor="phone">Teléfono</label>
-                                    <input type="tel" id="phone" placeholder="+51 999 999 999" />
+                                    <input type="tel" id="phone" name="phone" placeholder="+51 929 130 373" required />
                                 </div>
                             </div>
 
                             <div className="cta__form-group">
                                 <label htmlFor="service">Servicio de interés</label>
-                                <select id="service" defaultValue="">
+                                <select id="service" name="service" defaultValue="" required>
                                     <option value="" disabled>Selecciona un servicio</option>
                                     <option value="alquiler">Alquiler de Chillers</option>
                                     <option value="reparacion">Reparación y Mantenimiento</option>
@@ -106,7 +127,7 @@ export default function CTA() {
 
                             <div className="cta__form-group">
                                 <label htmlFor="message">Mensaje</label>
-                                <textarea id="message" rows="4" placeholder="Cuéntanos sobre tu proyecto o necesidad..." />
+                                <textarea id="message" name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto o necesidad..." required />
                             </div>
 
                             <button type="submit" className="btn btn-primary btn-lg cta__submit">

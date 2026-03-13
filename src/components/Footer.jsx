@@ -33,7 +33,7 @@ export default function Footer() {
                             <img src="/images/Refriclimatic_logo_icon.webp" alt="REFRICLIMATIC S.A.C. Logo" className="footer__logo-img" style={{ maxHeight: '60px' }} />
                         </div>
                         <p className="footer__brand-desc">
-                            Líderes en soluciones de enfriamiento industrial. Más de 15 años
+                            Líderes en soluciones de enfriamiento industrial. Más de 14 años
                             de experiencia brindando servicios de alquiler, reparación y
                             mantenimiento de chillers industriales.
                         </p>
@@ -83,9 +83,9 @@ export default function Footer() {
                     <div className="footer__links footer__contact-col">
                         <h4>Contacto</h4>
                         <div className="footer__contact-items">
-                            <a href="tel:+51999999999" className="footer__contact-link">
+                            <a href="tel:+51 929 130 373" className="footer__contact-link">
                                 <Phone size={16} />
-                                <span>+51 999 999 999</span>
+                                <span>+51 929 130 373</span>
                             </a>
                             <a href="mailto:informes@refriclimatic.com" className="footer__contact-link">
                                 <Mail size={16} />

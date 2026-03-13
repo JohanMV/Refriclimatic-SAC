@@ -5,7 +5,7 @@ import './Gallery.css';
 
 const images = [
     { src: '/images/Chiller_york_principal.webp', title: 'Chiller Industrial de Alta Capacidad', category: 'Equipos' },
-    { src: '/gallery-2.png', title: 'Sistemas de Enfriamiento en Azotea', category: 'Instalaciones' },
+    { src: '/images/gallery-2.webp', title: 'Sistemas de Enfriamiento en Azotea', category: 'Instalaciones' },
     { src: '/images/compresor_danfoss_2.webp', title: 'Componentes de Precisión', category: 'Tecnología' },
     { src: '/images/mantenimiento_chiller_30tr.webp', title: 'Mantenimiento - Chiller 30TR', category: 'Proyectos' },
     { src: '/images/reparación_especializada.webp', title: 'Montaje de Equipo Industrial', category: 'Proyectos' },

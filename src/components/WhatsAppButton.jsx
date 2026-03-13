@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import './WhatsAppButton.css';
 
 export default function WhatsAppButton() {
-    const phoneNumber = '51999999999';
+    const phoneNumber = '51929130373';
     const message = encodeURIComponent('Hola, me gustaría solicitar información sobre sus servicios de chillers industriales.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

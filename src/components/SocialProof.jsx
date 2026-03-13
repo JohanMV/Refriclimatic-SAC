@@ -2,17 +2,17 @@ import { motion } from 'framer-motion';
 import './SocialProof.css';
 
 const clients = [
-    { name: 'Backus', logo: '/images/backus_logo.png' },
-    { name: 'Gloria S.A.', logo: '/images/gloria_logo.jpeg' },
+    { name: 'Backus', logo: '/images/backus_logo.webp' },
+    { name: 'Gloria S.A.', logo: '/images/gloria_logo.webp' },
     { name: 'PRECOR', logo: '/images/precor_logo.png' },
-    { name: 'Globalplast Perú', logo: '/images/global_plast_sac_logo.jpg' },
-    { name: 'Eurotubo', logo: '/images/eurotubo_logo.jpg' },
-    { name: 'Iberoplast', logo: '/images/iberoplast_logo.png' },
-    { name: 'Solpack', logo: '/images/solpack_logo.jpg' },
+    { name: 'Globalplast Perú', logo: '/images/global_plast_sac_logo.webp' },
+    { name: 'Eurotubo', logo: '/images/eurotubo_logo.webp' },
+    { name: 'Iberoplast', logo: '/images/iberoplast_logo.webp' },
+    { name: 'Solpack', logo: '/images/solpack_logo.webp' },
     { name: 'RomEx', logo: '/images/romex_logo.png' },
-    { name: 'Industrias San Miguel', logo: '/images/industrias_san_miguel_logo.jpg' },
-    { name: 'Surpack', logo: '/images/surpack_logo.jpg' },
-    { name: 'R&M Consulting', logo: '/images/r&m_consulting_logo.jpg' },
+    { name: 'Industrias San Miguel', logo: '/images/industrias_san_miguel_logo.webp' },
+    { name: 'Surpack', logo: '/images/surpack_logo.webp' },
+    { name: 'R&M Consulting', logo: '/images/r&m_consulting_logo.webp' },
 ];
 
 export default function SocialProof() {

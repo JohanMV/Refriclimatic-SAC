@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { Star, MessageSquareQuote } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Star, MessageSquareQuote, ChevronDown } from 'lucide-react';
 import './Testimonials.css';
 
 const testimonials = [
@@ -46,6 +47,8 @@ const cardVariants = {
 };
 
 export default function Testimonials() {
+    const [expanded, setExpanded] = useState(false);
+
     return (
         <section id="testimonios" className="testimonials section-padding">
             <div className="container">
@@ -68,32 +71,53 @@ export default function Testimonials() {
                     </p>
                 </motion.div>
 
-                <motion.div
-                    className="testimonials__grid"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-100px' }}
-                >
-                    {testimonials.map((testimonial, i) => (
-                        <motion.div key={i} className="testimonials__card" variants={cardVariants}>
-                            <div className="testimonials__stars">
-                                {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
-                                ))}
-                            </div>
-                            <p className="testimonials__text">"{testimonial.text}"</p>
-                            <div className="testimonials__author">
-                                <div className="testimonials__avatar">{testimonial.avatar}</div>
-                                <div className="testimonials__author-info">
-                                    <strong>{testimonial.name}</strong>
-                                    <span>{testimonial.role}</span>
-                                    <span className="testimonials__company">{testimonial.company}</span>
-                                </div>
-                            </div>
+                <AnimatePresence>
+                    {expanded && (
+                        <motion.div
+                            className="testimonials__grid"
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="hidden"
+                            viewport={{ once: true, margin: '-100px' }}
+                        >
+                            {testimonials.map((testimonial, i) => (
+                                <motion.div key={i} className="testimonials__card" variants={cardVariants}>
+                                    <div className="testimonials__stars">
+                                        {[...Array(testimonial.rating)].map((_, i) => (
+                                            <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
+                                        ))}
+                                    </div>
+                                    <p className="testimonials__text">"{testimonial.text}"</p>
+                                    <div className="testimonials__author">
+                                        <div className="testimonials__avatar">{testimonial.avatar}</div>
+                                        <div className="testimonials__author-info">
+                                            <strong>{testimonial.name}</strong>
+                                            <span>{testimonial.role}</span>
+                                            <span className="testimonials__company">{testimonial.company}</span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
                         </motion.div>
-                    ))}
-                </motion.div>
+                    )}
+                </AnimatePresence>
+
+                <div className="testimonials__toggle-wrapper">
+                    <button
+                        className="testimonials__toggle"
+                        onClick={() => setExpanded(!expanded)}
+                    >
+                        <span>{expanded ? 'Ocultar testimonios' : 'Ver testimonios de clientes'}</span>
+                        <motion.span
+                            className="testimonials__toggle-icon"
+                            animate={{ rotate: expanded ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <ChevronDown size={18} />
+                        </motion.span>
+                    </button>
+                </div>
             </div>
         </section>
     );
