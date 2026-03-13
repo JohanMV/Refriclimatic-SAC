@@ -89,7 +89,7 @@ export default function Footer() {
                             </a>
                             <a href="mailto:informes@refriclimatic.com" className="footer__contact-link">
                                 <Mail size={16} />
-                                <span>ventas@refriclimatic.com</span>
+                                <span>informes@refriclimatic.com</span>
                             </a>
                             <div className="footer__contact-link">
                                 <MapPin size={16} />
