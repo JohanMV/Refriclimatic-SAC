@@ -67,13 +67,13 @@ export default function CTA() {
                         viewport={{ once: true, margin: '-100px' }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <form 
-                            className="cta__form" 
+                        <form
+                            className="cta__form"
                             onSubmit={(e) => {
                                 e.preventDefault();
                                 const formData = new FormData(e.target);
                                 const data = Object.fromEntries(formData.entries());
-                                
+
                                 const subject = encodeURIComponent(`Nueva Solicitud de Cotización - ${data.company || data.name}`);
                                 const body = encodeURIComponent(
                                     `Hola REFRICLIMATIC,\n\n` +
@@ -85,7 +85,7 @@ export default function CTA() {
                                     `Servicio: ${data.service}\n\n` +
                                     `Mensaje:\n${data.message}\n`
                                 );
-                                
+
                                 window.location.href = `mailto:informes@refriclimatic.com?subject=${subject}&body=${body}`;
                             }}
                         >
@@ -109,7 +109,7 @@ export default function CTA() {
                                 </div>
                                 <div className="cta__form-group">
                                     <label htmlFor="phone">Teléfono</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="+51 929 130 373" required />
+                                    <input type="tel" id="phone" name="phone" placeholder="+51" required />
                                 </div>
                             </div>
 
